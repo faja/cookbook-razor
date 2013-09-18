@@ -1,17 +1,15 @@
 name              "razor"
-maintainer        "Fletcher Nichol"
-maintainer_email  "fnichol@nichol.ca"
+maintainer        "Marcin Cabaj"
+maintainer_email  "marcin.cabaj@datasift.com"
 license           "Apache 2.0"
 description       "Project Razor"
 long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version           "0.5.1"
+version           "0.5.2"
 
-supports "ubuntu"
+supports "rhel"
+supports "centos"
 
 depends "build-essential"
-depends "git"
 depends "tftp"
 depends "mongodb"
-depends "postgresql"
-depends "database"
 depends "nodejs"

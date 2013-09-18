@@ -31,6 +31,8 @@ def default_ruby_system_packages
     when '12.04', '12.10' then %w[ ruby1.9.1 ruby1.9.1-dev ] + pkgs
     else pkgs
     end
+  when 'rhel','centos'
+    pkgs = %w{ ruby ruby-devel }
   end
 end
 
@@ -81,8 +83,8 @@ default['razor']['install_path']          = '/opt/razor'
 default['razor']['bundle_cmd']  = 'bundle'
 default['razor']['npm_cmd']     = 'npm'
 
-default['razor']['app']['git_url']  = 'https://github.com/puppetlabs/Razor.git'
-default['razor']['app']['git_rev']  = '0.9.0'
+default['razor']['app']['git_url']  = 'https://github.com/faja/Razor.git'
+default['razor']['app']['git_rev']  = 'ds-razor'
 
 default['razor']['rubygems_source']['version'] = src_version = "1.8.24"
 default['razor']['rubygems_source']['url']     =

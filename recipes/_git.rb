@@ -1,10 +1,10 @@
 #
 # Cookbook Name:: razor
-# Recipe:: default
+# Recipe:: git
 #
-# Author:: Fletcher Nichol (<fnichol@nichol.ca>)
+# Author:: Marcin Cabaj (<marcin.cabaj@datasift.com>)
 #
-# Copyright 2012, Blue Box Group, LLC
+# Copyright 2013, MediaSift Ltd
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,18 +19,4 @@
 # limitations under the License.
 #
 
-# os validation
-case node['platform_family']
-  when "rhel"
-    include_recipe 'build-essential'
-    include_recipe 'razor::_git'
-    include_recipe 'razor::_tftp'
-    include_recipe 'razor::_tftp_files'
-    include_recipe 'razor::_mongodb'
-    include_recipe 'razor::_nodejs'
-    include_recipe 'razor::_ruby_from_package'
-    include_recipe 'razor::_app'
-    include_recipe 'razor::_add_images'
-  else
-    Chef::Log.warn "OS not supported."
-end
+package 'git'
